@@ -7,7 +7,7 @@ body {
 
 header {
     background: #333;
-    color: #fff;
+    color: #14a9c4;
     padding: 10px 0;
     text-align: center;
 }
@@ -45,7 +45,7 @@ section {
 
 .produto {
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #f1eaeaa1;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -63,7 +63,7 @@ section {
     flex: 1;
 }
 
-button.carrinho {
+button.Comprar {
     background: #28a745;
     color: #fff;
     border: none;
@@ -73,7 +73,7 @@ button.carrinho {
     margin-top: 10px;
 }
 
-button.carrinho:hover {
+button.Comprar:hover {
     background: #218838;
 }
 
