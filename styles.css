@@ -7,9 +7,37 @@ body {
 
 header {
     background: #333;
-    color: #14a9c4;
+    color: #c90f0f;
     padding: 10px 0;
     text-align: center;
+}
+
+img{
+    width: 1500px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
 }
 
 h2{
@@ -57,6 +85,10 @@ section {
     width: 380px;
     height: auto;
     margin-right: 20px;
+}
+
+.produto-img{
+    width: 150px;
 }
 
 .produto div {
