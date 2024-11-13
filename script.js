@@ -37,18 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Manipulação do DOM
+
 let titulo = document.querySelector("h1");
 titulo.textContent = `${nome} - Produtos com Qualidade`;
 
-// Estruturas Condicionais
+
 if (desconto) {
     console.log("Desconto aplicado!");
 } else {
     console.log("Sem desconto aplicado.");
 }
 
-// Estruturas de Repetição
+
 let produtos = ["Fone A", "Fone B", "Fone C"];
 produtos.forEach((produto, index) => {
     console.log(`Produto ${index + 1}: ${produto}`);
