@@ -1,22 +1,21 @@
-// Declaração de Variáveis
 let nome = "Loja de Fones";
 const preco = 299.99;
 let quantidade = 3;
 
-// Operações Matemáticas e Operações Lógicas
-let total = preco * quantidade;  // Operação matemática
-let desconto = total > 500;  // Operação lógica (verifica se o total é maior que 500)
 
-// Funções
+let total = preco * quantidade; 
+let desconto = total > 500; 
+
+
 function calcularDesconto(valor) {
-    return valor * 0.1; // Retorna 10% de desconto
+    return valor * 0.1;
 }
 
-// Eventos
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Página carregada!");
+
     
-    // Atribuir evento de clique para o botão de comprar
     let botoesComprar = document.querySelectorAll(".Comprar");
     botoesComprar.forEach((botao) => {
         botao.addEventListener("click", () => {
@@ -24,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Validação de formulário no botão Enviar
+
     let botaoEnviar = document.querySelector("button[type='submit']");
     botaoEnviar.addEventListener("click", (e) => {
-        e.preventDefault();  // Previne o envio para validação
+        e.preventDefault();
         let nome = document.getElementById("nome").value;
         let email = document.getElementById("email").value;
         if (!nome || !email) {
@@ -55,22 +54,16 @@ produtos.forEach((produto, index) => {
     console.log(`Produto ${index + 1}: ${produto}`);
 });
 
-// Tipos de Dados
-let stringExemplo = "Texto";          // String
-let numeroExemplo = 42;               // Number
-let booleanExemplo = true;            // Boolean
-let objetoExemplo = { produto: "Fone", preco: 250 }; // Object
 
-// Array do Carrinho e Total
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 let totalCarrinho = parseFloat(localStorage.getItem("totalCarrinho")) || 0;
 
-// Função para adicionar item ao carrinho
+
 function adicionarAoCarrinho(nomeProduto, precoProduto) {
     carrinho.push({ nome: nomeProduto, preco: precoProduto });
     totalCarrinho += precoProduto;
 
-    // Salvar no localStorage
+
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
     localStorage.setItem("totalCarrinho", totalCarrinho.toFixed(2));
 
@@ -78,7 +71,7 @@ function adicionarAoCarrinho(nomeProduto, precoProduto) {
     atualizarTotalCarrinho();
 }
 
-// Função para exibir o total do carrinho no HTML
+
 function atualizarTotalCarrinho() {
     let totalDisplay = document.getElementById("total-display");
     if (totalDisplay) {
@@ -86,7 +79,7 @@ function atualizarTotalCarrinho() {
     }
 }
 
-// Adiciona eventos de clique nos botões "Comprar" para adicionar os itens ao carrinho
+
 document.addEventListener("DOMContentLoaded", () => {
     let botoesComprar = document.querySelectorAll(".Comprar");
     botoesComprar.forEach((botao) => {
@@ -97,16 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Exibir o total do carrinho ao carregar a página
+
     atualizarTotalCarrinho();
 
-    // Exibir itens do carrinho na página do carrinho
+
     if (document.querySelector("#lista-carrinho")) {
         mostrarCarrinho();
     }
 });
 
-// Função para exibir o carrinho na página "carrinho.html"
+
 function mostrarCarrinho() {
     let listaCarrinho = document.getElementById("lista-carrinho");
     let totalCarrinhoDisplay = document.getElementById("total-carrinho");
@@ -120,16 +113,16 @@ function mostrarCarrinho() {
     totalCarrinhoDisplay.textContent = `Total: R$ ${totalCarrinho.toFixed(2)}`;
 }
 
-// Função para limpar o carrinho
+
 function limparCarrinho() {
     carrinho = [];
     totalCarrinho = 0;
 
-    // Remove os dados do localStorage
+  
     localStorage.removeItem("carrinho");
     localStorage.removeItem("totalCarrinho");
 
-    // Atualiza a exibição
+    
     atualizarTotalCarrinho();
     if (document.querySelector("#lista-carrinho")) {
         document.getElementById("lista-carrinho").innerHTML = "";
@@ -139,7 +132,7 @@ function limparCarrinho() {
     alert("Carrinho foi limpo!");
 }
 
-// Adiciona o evento de clique ao botão "Limpar Carrinho" na página "carrinho.html"
+
 document.addEventListener("DOMContentLoaded", () => {
     const botaoLimpar = document.getElementById("limpar-carrinho");
     if (botaoLimpar) {
